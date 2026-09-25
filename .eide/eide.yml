@@ -1,0 +1,166 @@
+version: "4.1"
+name: PY32F030x8_RTOS_GCC_7segment_LED_Counter
+type: ARM
+deviceName: PY32F030x8
+packDir: .pack/Puya/PY32F0xx_DFP.1.2.0
+srcDirs:
+  - ../ucos-cfg
+  - ../ucos-core
+  - ../ucos-port
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: startup
+      files:
+        - path: startup_py32f030xx.s
+      folders: []
+    - name: PY32F0xx_HAL_Driver
+      files: []
+      folders:
+        - name: inc
+          files:
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_adc.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_bus.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_comp.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_cortex.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_crc.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_dma.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_exti.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_gpio.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_i2c.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_iwdg.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_led.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_lptim.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_pwr.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_rcc.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_rtc.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_spi.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_system.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_tim.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_usart.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_utils.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_wwdg.h
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Inc/py32f0xx_ll_flash.h
+          folders: []
+        - name: src
+          files:
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_adc.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_comp.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_crc.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_dma.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_exti.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_gpio.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_i2c.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_led.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_lptim.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_pwr.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_rcc.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_rtc.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_spi.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_tim.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_usart.c
+            - path: ../Drivers/PY32F0xx_HAL_Driver/Src/py32f0xx_ll_utils.c
+          folders: []
+    - name: User
+      files: []
+      folders:
+        - name: src
+          files:
+            - path: ../Src/py32f0xx_it.c
+            - path: ../Src/main.c
+            - path: ../Src/system_py32f0xx.c
+            - path: ../Src/OneButton.c
+            - path: ../Src/pcg_basic.c
+          folders: []
+        - name: inc
+          files:
+            - path: ../Inc/main.h
+            - path: ../Inc/py32_assert.h
+            - path: ../Inc/py32f0xx_it.h
+            - path: ../Inc/OneButton.h
+            - path: ../Inc/pcg_basic.h
+          folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: 36bcf0031e18a3008bbdaa90a96a7987
+targets:
+  Project:
+    cppPreprocessAttrs:
+      defineList:
+        - USE_FULL_LL_DRIVER
+        - PY32F030x8
+        - ARM_MATH_CM0PLUS
+        - F
+      incList:
+        - .
+        - ../Inc
+        - ../Drivers/PY32F0xx_HAL_Driver/Inc
+        - ../Drivers/CMSIS/Include
+        - ../Drivers/CMSIS/Device/PY32F0xx/Include
+      libList: []
+    excludeList:
+      - <virtual_root>/BSP
+      - <virtual_root>/Doc
+    settings:
+      debugger: cortex-debug
+    toolchain: GCC
+    toolchainConfigMap:
+      GCC:
+        archExtensions: ""
+        cpuType: Cortex-M0+
+        floatingPointHardware: none
+        options:
+          version: 5
+          afterBuildTasks: []
+          asm-compiler:
+            ASM_FLAGS: -DDEBUG
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: -Os
+            C_FLAGS: -Os
+            language-c: c17
+            language-cpp: gnu++14
+            no-rtti: true
+            no-threadsafe-statics: true
+            no-use-cxa-atexit: true
+            one-elf-section-per-data: true
+            one-elf-section-per-function: true
+            optimization: level-size
+            warnings: all-warnings
+          global:
+            $float-abi-type: softfp
+            arm-thumb-mode: thumb
+            not-use-syscalls: true
+            output-debug-info: enable
+            stack-usage: true
+            use-newlib-nano: true
+          linker:
+            $toolName: auto
+            LD_FLAGS: -Wl,--gc-sections -static -Wl,--start-group -Wl,--end-group
+            LIB_FLAGS: -lc -lm -lstdc++ -lsupc++
+            output-format: elf
+            remove-unused-input-sections: true
+            use-linker-plugin: true
+        scatterFilePath: py32f030x8.ld
+        storageLayout:
+          RAM: []
+          ROM: []
+        useCustomScatterFile: true
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: PY32F030x8
+          vendor: Puya
+        otherCmds: ""
+        proType: 1
+        speed: 4000
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: cmsis-dap
+        target: py32f030
+    uploader: JLink

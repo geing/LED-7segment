@@ -1,0 +1,5 @@
+{
+    "cmake.configureOnOpen": false,
+    "EIDE.ARM.GCC.InstallDirectory": "${userRoot}/.eide/tools/gcc_arm",
+    "EIDE.ARM.Option.AxfToElf": true
+}
